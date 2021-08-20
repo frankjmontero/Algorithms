@@ -1,30 +1,24 @@
 function createPalindrome(suppliedString) {
-
+  let arrPalindrome = [];
   let palindrome = [];
-  let isPalindrome = true;
-  let letters = 'a';
- 
+  const a = 'a';
+
   for(let i = 0, j = suppliedString.length - 1; i <= j; i++) {
-
-    if(suppliedString[i] === '?') {
-      palindrome[i] = (suppliedString[j] === '?') ? letters : suppliedString[j];  
-    } else palindrome[i] = suppliedString[i];
-    
-    if(suppliedString[j] === '?') {
-      palindrome[j] = (suppliedString[i] === '?') ? letters : suppliedString[i];  
-    } else palindrome[j] = suppliedString[j];
+      arrPalindrome.push((suppliedString[i] + suppliedString[j]).match(/[^?]/g));      
     j--;
   }
-
-  for(let i = 0, j = palindrome.length - 1; i <= j; i++) {
-    if (palindrome[i] !== palindrome[j]) {
-      isPalindrome = false;
-      break;
-    }
-    j--;
+  
+  let i = 0, j = suppliedString.length - 1;
+  for(let m of arrPalindrome) {
+    if(m) {
+      if (m.length > 1 && (m[0] !== m[1])) return 'NO';
+      palindrome[i] = palindrome[j] = m[0];
+    } else palindrome[i] = palindrome[j] = a;
+    j--; 
+    i++;
   }
 
-  return (isPalindrome) ? palindrome.toString().replace(/,/g, '') : 'NO';
+  return palindrome.join('');
 }
 
 console.log(createPalindrome("?ab??a") === 'aabbaa');
