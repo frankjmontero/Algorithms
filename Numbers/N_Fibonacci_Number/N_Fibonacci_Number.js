@@ -1,13 +1,11 @@
 let fibSec = n => {
   let a = 0, b = 1;
-  for(let i = 1; i < n; i++) {
+  let i = (n % 2) === 1 ? 1 : 0 ;
+  for(; i < n; i = i + 2) {
     a += b;
-    b = a - b;
-    a -= b;
     b += a;
   }
-  
-  return b;
+  return (n % 2) === 1 ? b : a;
 }
 
 console.log(fibSec(1) === 1);
