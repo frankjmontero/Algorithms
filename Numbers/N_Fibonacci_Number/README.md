@@ -8,5 +8,13 @@ Run instructions:
 
 In Javascript
 ```
-node N_Fibonacci_Number.js
+node NFibonacciNumber.js
+```
+
+Testing values
+```js
+console.log(fibSec(1) === 1);
+console.log(fibSec(5) === 5);
+console.log(fibSec(7) === 13);
+console.log(fibSec(8) === 21);
 ```

@@ -10,6 +10,8 @@ In Javascript
 ```
 node MostRepeatedChar.js
 ```
+
+Testing value
 ```js
 console.log(mostUsedChar('aabklklbraarrrrrkkkllllllll') === 'l');;
 ```

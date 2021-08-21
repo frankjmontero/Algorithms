@@ -12,5 +12,14 @@ Run instructions:
 
 In Javascript
 ```
-node QuestionMark_Palindrome.js
+node QuestionMarkPalindrome.js
+```
+
+Testing values
+```js
+console.log(createPalindrome("?ab??a") === 'aabbaa');
+console.log(createPalindrome("bab??a") === 'NO');
+console.log(createPalindrome("?a?") === 'aaa');
+console.log(createPalindrome("a?a") === 'aaa');
+console.log(createPalindrome("?abc??a") === 'aabcbaa');
 ```
