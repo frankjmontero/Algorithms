@@ -1,11 +1,13 @@
 const chunkArray = (arr, size) => {
-  let chunkedArray = [[]];
+  let chunkedArray = [];
+  let tempArr = [];
 
-  for (let i = 1, j = 0; i <= arr.length; i++) {
-    if (chunkedArray[j].length === size) {
-      chunkedArray[++j] = [];
+  for (let i = 1; i <= arr.length; i++) {
+    tempArr.push(arr[i-1]);
+    if (tempArr.length === size || i === arr.length) {
+      chunkedArray.push(tempArr);
+      tempArr = [];
     }
-    chunkedArray[j].push(arr[i-1]);
   }
   return chunkedArray;
 }
