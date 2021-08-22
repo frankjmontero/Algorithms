@@ -1,11 +1,3 @@
-const capitalize = (s) => {
-  const arrChar = s.split('');
-  for (let i = 0; i < arrChar.length; i++) {
-    if (i === 0 || arrChar[i - 1] === ' ') {
-      arrChar[i] = arrChar[i].toUpperCase();
-    }
-  }
-  return arrChar.join('');
-};
+const capitalize = s => [...s].map((s, i, arr) => (arr[i-1] === ' ' || i === 0) ? arr[i].toUpperCase() : arr[i]).join('');
 
 console.log(capitalize('a long trip') === 'A Long Trip');
