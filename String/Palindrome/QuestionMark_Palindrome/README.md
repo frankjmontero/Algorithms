@@ -1,4 +1,3 @@
-
 # **Form Palindrome**
 
 Given a string with question marks (?) determine if a palindrome can be created replacing the marks with any alphabet letter. 
