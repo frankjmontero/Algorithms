@@ -1,9 +1,4 @@
-const drawPyramid = h => {
-  const poundSign = '#', blank = ' ';
-  
-  for(let i = 0; i < h; i++) {
-  	console.log(`'${blank.repeat(h-i-1)}${poundSign.repeat(i*2+1)}${blank.repeat(h-i-1)}'`);
-  }
-};
+const drawPyramid = h => Array(h).fill('').forEach((value, i) => 
+console.log(`'${' '.repeat(h-i-1)}${'#'.repeat(i*2+1)}${' '.repeat(h-i-1)}'`));
 
 drawPyramid(3);
