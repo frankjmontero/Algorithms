@@ -1,6 +1,6 @@
 # **Form N Steps With #**
 
-Use N to draw steps using the pound sign, N being the amount of steps.
+Use `N` to draw steps using the pound sign, `N` being the amount of steps.
 
 ## **Testing**
 
@@ -14,9 +14,9 @@ node Steps.js
 ```js
 drawSteps(3);
 /* Should display:
-'#    '
-'###  '
-'#####'
+'#  '
+'## '
+'###'
 
 The dashes must line up
 */
