@@ -1,17 +1,21 @@
 const addedChar = (s, t) => {
-  const charObj = {};
+  const charObj = new Map();
   const sLength = s.length;
   let charAdded = 'No additions made';
 
   for (let i = 0; i <= sLength; i++) {
-    charObj[t[i]] = (charObj.hasOwnProperty(t[i])) ? charObj[t[i]] + 1 : 1;
-    charObj[s[i]] = (charObj.hasOwnProperty(s[i])) ? charObj[s[i]] + 1 : 1;
+      charObj.set(t[i], (charObj.has(t[i]) ? charObj.get(t[i]) + 1 : 1));
+    if (i === sLength) break;
+    charObj.set(s[i], (charObj.has(s[i]) ? charObj.get(s[i]) + 1 : 1));
+    if (i === sLength) break;
   }
-  for (char in charObj) {
-    if (charObj[char] % 2 === 1) {
-      charAdded = char;
-      return charAdded;
-    }
+
+  for(let i = 0; i < t.length; i++) {
+      const char = t.charAt(i);
+      if (charObj.get(char) % 2 === 1) {
+          charAdded = char;
+          return charAdded;
+      }
   }
 
   return charAdded;
