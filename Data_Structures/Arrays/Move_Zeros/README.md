@@ -1,6 +1,6 @@
 # **Move Zeros to the Right**
 
-Move all the zero elements to the end of the array and keep the relative position of the other elements.
+Move all the zero elements to the end of the array and keep the relative position of the other elements. Mute the original array.
 
 ## **Testing**
 

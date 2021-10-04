@@ -1,16 +1,20 @@
-const moveZeros = (n) => {
-  for (let i = 0, j = n.length - 1; i < j;) {
-    if (n[i] === 0) {
-      for (let m = i; m < j; m++) {
-        n[m] = n[m+1];
+const moveZeros = (num) => {
+  let steps = 0;
+  const arrLength = num.length;
+
+  for (let i = 0; i < arrLength; i++) {
+    if(steps+i < arrLength) {
+      if (num[i] === 0) {
+        num[i-steps] = num[i+1];
+        steps++;
       }
-      n[j] = 0;
-      j--;
-      i--;
+      continue
     }
-    i++;
+
+    num[i-steps] = num[i];
+    num[i] = 0;
   }
-};
+}
 
 const arr = [0,1,0,3,12];
 moveZeros(arr);
